@@ -1,6 +1,21 @@
 .header {
   background-color: #3ca0e7;
+  margin-bottom: 10px;
+  background: #10131f;
 }
+
+ul primary-menu-items {
+  background-color: rgb(22, 24, 25);
+}
+
+.primary-menu-item {
+  transition: 0.1s;
+}
+
+.primary-menu-item:hover {
+  background: #3ca0e7;
+}
+
 .header h1 {
   text-align: center;
   color: aliceblue;
@@ -14,28 +29,54 @@
   margin: 0 auto;
   display: block;
 
-  padding: 0px 0 0 0;
+  /* padding: 0px 0 0 0; */
   text-align: center;
   font-size: 16px;
+  background: none;
 }
+
+.primary-navigation ul {
+  background: none;
+}
+
 .primary-navigation ul li {
+  width: 159px;
+  height: 50px;
+  /* margin: px; */
+  font-size: 16px;
+  border-radius: 80px;
+  border-style: none;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  transition: 0.5s;
+  outline: none;
+  /* background: none; */
+  font-size: 18px;
+  color: #555;
+  padding: 20px 10px 20px 5px;
+  font-weight: 600;
   list-style: none;
-  margin: 0 auto;
-  border-left: 2px solid #3ca0e7;
+  margin: 16px;
+  /* background-color: rgb(22, 24, 25)'; */
+  background: #004679;
+  box-shadow: inset 7px 7px 15px #0070c2, inset -10px -5px 9px #001c30;
   display: inline-block;
-  padding: 0 30px;
+  padding: 10px;
   position: relative;
-  text-decoration: none;
   text-align: center;
+  justify-content: center;
   font-family: sans-serif;
 }
 
 .primary-navigation li a {
-  color: black;
+  color: white;
+  padding: 10px 40px 10px 40px;
 }
 
 .primary-navigation li a:hover {
-  color: #3ca0e7;
+  color: #ffffff;
 }
 
 .primary-navigation li:hover {
@@ -43,20 +84,22 @@
 }
 
 .primary-navigation ul li ul {
-  visibility: hidden;
+  display: none;
+
   opacity: 0;
   position: absolute;
   padding-left: 0;
   left: 0;
-  display: none;
+
   background: white;
 }
 
 .primary-navigation ul li:hover > ul,
 ul li ul:hover {
+  display: block;
   visibility: visible;
   opacity: 1;
-  display: block;
+
   min-width: 250px;
   text-align: left;
   padding-top: 20px;
@@ -74,6 +117,7 @@ ul li ul:hover {
 .primary-navigation ul li ul li a:hover {
   padding-left: 10px;
   border-left: 2px solid #3ca0e7;
+  border-right: 2px solid #3ca0e7;
   transition: all 0.3s ease;
 }
 

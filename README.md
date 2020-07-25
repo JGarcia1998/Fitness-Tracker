@@ -17,8 +17,22 @@ An app designed with health and fitness in mind. Capable of tracking a users cal
  - :star: [Contributors](#contributors)
  
 ## Screenshots
+<img width="1424" alt="CleanShot 2020-07-21 at 12 14 36@2x" src="https://user-images.githubusercontent.com/49554888/88096184-43a0c800-cb64-11ea-9dc4-c2018322a597.png">
+
+<img width="1423" alt="CleanShot 2020-07-21 at 12 16 08@2x" src="https://user-images.githubusercontent.com/49554888/88096245-574c2e80-cb64-11ea-8f9b-d6c061fef5df.png">
+
+<img width="1202" alt="CleanShot 2020-07-20 at 23 27 33@2x" src="https://user-images.githubusercontent.com/49554888/88096278-63d08700-cb64-11ea-857b-041e11d4ee61.png">
+
+<img width="1435" alt="Screen Shot 2020-07-20 at 10 30 59 PM" src="https://user-images.githubusercontent.com/49554888/88096438-a5613200-cb64-11ea-8dbb-92a853d3333b.png">
+
+<img width="236" alt="CleanShot 2020-07-20 at 23 28 21@2x" src="https://user-images.githubusercontent.com/49554888/88096478-b5791180-cb64-11ea-91b1-ecaf776c5039.png">
+
+
 
 ## Videos
+
+# ![Analyze-Fit-Demo-vid](https://user-images.githubusercontent.com/49554888/88095529-464eed80-cb63-11ea-9818-74542a140a12.gif)
+
 
 ## Getting-Started
 

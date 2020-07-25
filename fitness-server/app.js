@@ -33,7 +33,59 @@ app.get("/food-items/:id", (req, res) => {
   });
 });
 
+app.get("/exercise-items/:id", (req, res) => {
+  let id = req.params.id;
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = mm + "/" + dd + "/" + yyyy;
+  db.Exercise.findAll({
+    where: {
+      userid: id,
+      date: today,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
+app.get("/exercise-items-filter/:id", (req, res) => {
+  let id = req.params.id;
+
+  db.Exercise.findAll({
+    where: {
+      userid: id,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
+app.get("/recipes/:id", (req, res) => {
+  let id = req.params.id;
+  db.Recipes.findAll({
+    where: {
+      userid: id,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
 // #######################################----POST ROUTES----########################################
+
+app.post("/remove-recipe/:id", (req, res) => {
+  let id = req.params.id;
+  db.Recipes.destroy({
+    where: {
+      id: id,
+    },
+  }).then(() => {
+    res.send({ message: "Recipe Removed" });
+  });
+});
 
 app.post("/update/:id", (req, res) => {
   let id = req.params.id;
@@ -68,6 +120,28 @@ app.post("/update/:id", (req, res) => {
   });
 });
 
+app.post("/remove-exercise/:id", (req, res) => {
+  let id = req.params.id;
+  db.Exercise.destroy({
+    where: {
+      id: id,
+    },
+  }).then(() => {
+    res.send({ message: "Exercise Removed" });
+  });
+});
+
+app.post("/add-recipe/:id", (req, res) => {
+  let id = req.params.id;
+  let dish = req.body.dish;
+
+  db.Recipes.create({
+    dish: dish,
+    userid: id,
+  });
+  res.send({ message: "Recipe Added" });
+});
+
 app.post("/user-login", (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
@@ -96,6 +170,24 @@ app.post("/add-food/:id", (req, res) => {
     userid: id,
   });
   res.send({ message: "Food Added" });
+});
+
+app.post("/add-exercise/:id", (req, res) => {
+  let id = req.params.id;
+  let sets = req.body.exercise.sets;
+  let exercise = req.body.exercise.exercise;
+  let weight = req.body.exercise.weight;
+  let date = req.body.date;
+
+  db.Exercise.create({
+    sets: sets,
+    exercise: exercise,
+    weight: weight,
+    userid: id,
+    date: date,
+  });
+
+  res.send({ message: "Exercise Added" });
 });
 
 app.post("/user-registration", (req, res) => {

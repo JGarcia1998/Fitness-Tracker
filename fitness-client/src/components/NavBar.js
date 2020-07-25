@@ -1,6 +1,6 @@
 import React from "react";
+import { NavLink, Redirect } from "react-router-dom";
 import "../style/navBar.css";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 function NavBar(props) {
   return (
@@ -11,37 +11,33 @@ function NavBar(props) {
       <nav role="navigation" className="primary-navigation">
         <ul className="primary-menu-items">
           <li className="primary-menu-item">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Home </NavLink>
           </li>
-          <li>
-            <NavLink to="/">More &#x25BE;</NavLink>
-            <ul className="dropdown" className="drop-menu-items">
-              <li classname="drop-menu-item">
-                <NavLink className="links" to="/">
-                  Healthy Foods
-                </NavLink>
-              </li>
-              <li classname="drop-menu-item">
-                <NavLink className="links" to="/">
-                  Exercises
-                </NavLink>
-              </li>
-            </ul>
+
+          {props.isAuthenticated == true ? (
+            <li className="primary-menu-item">
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+          ) : null}
+          <li className="primary-menu-item">
+            <NavLink to="/search">Recipes</NavLink>
           </li>
-          <li>
-            <NavLink to="/">About</NavLink>
+          {props.isAuthenticated == true ? (
+            <li className="primary-menu-item">
+              <NavLink to="/workout-log">Workout Log</NavLink>
+            </li>
+          ) : null}
+          <li className="primary-menu-item">
+            <NavLink to="/About">About Us</NavLink>
           </li>
           {props.isAuthenticated == false ? (
-            <li>
+            <li className="primary-menu-item">
               <NavLink to="/log-in">Login</NavLink>
             </li>
           ) : null}
-          <li>
-            <NavLink to="/">Contact</NavLink>
-          </li>
-          {props.isAuthenticated == true ? (
-            <li>
-              <NavLink to="/profile">Profile</NavLink>
+          {props.isAuthenticated == false ? (
+            <li className="primary-menu-item">
+              <NavLink to="/register">Register</NavLink>
             </li>
           ) : null}
         </ul>
